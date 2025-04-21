@@ -22,10 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.menu,
-          color: AppColor().primaryColors,
-          size: 30,
-        ),
+        leading: Builder(builder: (context) => IconButton(onPressed: () {
+          Scaffold.of(context).openDrawer();
+        }, icon: Icon(Icons.menu,color: AppColor().primaryColors,)),),
         title: RichText(text: TextSpan(
           children: [
             TextSpan(
@@ -48,6 +47,141 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         )
       ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              // DrawerHeader(
+              //   decoration: BoxDecoration(
+              //     color: AppColor().primaryColors,
+              //
+              //   ),
+              //     child: Column(
+              //       crossAxisAlignment: CrossAxisAlignment.start,
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     CircleAvatar(
+              //       maxRadius: 35,
+              //       child: Image.asset("assets/image/alphabet.png",
+              //         height: 30,width: 30,
+              //       color: AppColor().primaryColors,),
+              //     ),
+              //     Text("Md Rakib",style: TextStyle(
+              //       color:Colors.white,
+              //       fontSize: 20,
+              //     ),)
+              //   ],
+              // )),
+
+
+              UserAccountsDrawerHeader(
+                accountName: Text("Md Rakib",style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400
+                ),),
+                accountEmail: Text("mdrakib@gmail.com",style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400
+                ),),
+                currentAccountPicture: CircleAvatar(
+                  child: Image.asset("assets/image/alphabet.png",
+                    height: 40,width: 40,color: AppColor().primaryColors,),
+                ),
+                decoration: BoxDecoration(
+                    color: AppColor().primaryColors
+                ),
+              ),
+              ListTile(
+                title:Text("Vouchers & Offers",style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400
+                ),),
+                leading: Icon(Icons.local_offer_outlined,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Favorite",style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400
+                ),),
+                leading: Icon(Icons.favorite_border,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Orders & reordering",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
+                  ),),
+                leading: Icon(Icons.receipt_long,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Addresses",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
+                  ),),
+                leading: Icon(Icons.local_offer_outlined,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Payment methods",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
+                  ),),
+                leading: Icon(Icons.payment,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Help center",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
+                  ),),
+                leading: Icon(Icons.help_center,color: AppColor().primaryColors,),
+              ),
+              ListTile(
+                title:Text("Invite friends",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400
+                  ),),
+                leading: Icon(Icons.group_add_outlined,color: AppColor().primaryColors,),
+              ),
+              Divider(),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Text("Settings",style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18
+                ),),
+              ),
+              SizedBox(height: 50,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Text("Terms & Condition/Privacy",style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18
+                ),),
+              ),
+              SizedBox(height: 30,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18),
+                child: Text("Logout",style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18
+                ),),
+              ),
+            ],
+          ),
+        ),
     
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -156,6 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+
     );
   }
 }
