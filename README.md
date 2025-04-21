@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 
 
-reenshot 2025-04-22 012138](https://git![Screenshot 2025-04-22 012138](https://github.com/user-attachments/assets/5d2fb6ae-d9f5-49b3-bc1c-4a96850193a5)
+
 hub.com/user-attachments/assets/ab0573e6-80d0-49c9-b988-e79f44cf78f3)
 int for a Flutter app![Screenshot 2025-04-22 012125](https://github.com/user-attachments/assets/168f8e48-f8f7-452e-891c-6b80c2accc4f)
 lication.
